@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpi88v5e83m8nsnnqth0",
+  "parentID": "mig_cpi88tpvqeg9k50r6b3g",
+  "checksum": "1:fc1c0a0b9cbcd5ccde7fe3316f2f6b2b48ec9e41bad02491c83dee72351efdcb",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "birthday",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

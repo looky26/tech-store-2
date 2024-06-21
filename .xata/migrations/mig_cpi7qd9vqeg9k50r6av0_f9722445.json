@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpi7qd9vqeg9k50r6av0",
+  "parentID": "mig_cpi7q8te83m8nsnnqte0",
+  "checksum": "1:f9722445190ca57e194d8990eaa2c06b933b2d1af76468e2ccb5fab1010885f2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "city",
+          "type": "string"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

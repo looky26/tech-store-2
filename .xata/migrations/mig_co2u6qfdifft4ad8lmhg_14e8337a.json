@@ -1,0 +1,16 @@
+{
+  "id": "mig_co2u6qfdifft4ad8lmhg",
+  "parentID": "mig_co2u6lvdifft4ad8lmgg",
+  "checksum": "1:14e8337ae3887ed39beae4631acae3ed10ac21f274d6bcfae513a9f4eaf69292",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "brands"
+      }
+    }
+  ]
+}

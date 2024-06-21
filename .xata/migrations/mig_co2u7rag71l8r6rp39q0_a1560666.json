@@ -1,0 +1,19 @@
+{
+  "id": "mig_co2u7rag71l8r6rp39q0",
+  "parentID": "mig_co2u7n1bqdbdp8sa94p0",
+  "checksum": "1:a156066621a130c91e086c533065b78ca465d6c00fd53558f78dc979a9a163e1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "brand",
+          "type": "link",
+          "link": {
+            "table": "brands"
+          }
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

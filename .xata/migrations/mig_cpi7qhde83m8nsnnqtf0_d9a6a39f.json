@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpi7qhde83m8nsnnqtf0",
+  "parentID": "mig_cpi7qd9vqeg9k50r6av0",
+  "checksum": "1:d9a6a39f1aaa274376be7996061a16d64886552ddde27a95bd562d797987c6e4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "zipcode",
+          "type": "int"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

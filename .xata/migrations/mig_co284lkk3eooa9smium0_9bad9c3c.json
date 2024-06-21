@@ -1,0 +1,16 @@
+{
+  "id": "mig_co284lkk3eooa9smium0",
+  "parentID": "mig_co2810ck3eooa9smiul0",
+  "checksum": "1:9bad9c3c9dfd8514353d3998c7f12880f5451040cefe0b79fb7fa5e35d0da429",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "specification",
+          "type": "json"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

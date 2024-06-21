@@ -1,0 +1,16 @@
+{
+  "id": "mig_cp9cfndnk050v1gbqecg",
+  "parentID": "mig_cp9cfja0blf634fbptpg",
+  "checksum": "1:6f9b448e9885ceae7c58003ed0557e82b49a92d0fd96d9fde5b2cc79e59f5637",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "brands"
+      }
+    }
+  ]
+}

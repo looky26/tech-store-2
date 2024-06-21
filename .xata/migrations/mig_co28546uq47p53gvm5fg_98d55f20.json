@@ -1,0 +1,13 @@
+{
+  "id": "mig_co28546uq47p53gvm5fg",
+  "parentID": "mig_co2852kk3eooa9smiung",
+  "checksum": "1:98d55f2064878c83e3b283c9e7b6dcaf7573130205aabd63ae68a7c583b4d0c4",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "description",
+        "table": "products"
+      }
+    }
+  ]
+}

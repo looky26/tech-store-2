@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpi7pt9vqeg9k50r6asg",
+  "parentID": "mig_cpi7pq5e83m8nsnnqtb0",
+  "checksum": "1:ed42ed30cedfd327fa0dcf25668b81f9526d758021d3f065e9b37f90b3df64fc",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "address2",
+          "type": "text"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

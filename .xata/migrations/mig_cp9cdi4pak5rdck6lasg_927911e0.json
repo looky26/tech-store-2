@@ -1,0 +1,16 @@
+{
+  "id": "mig_cp9cdi4pak5rdck6lasg",
+  "parentID": "mig_cp9cddi0blf634fbptjg",
+  "checksum": "1:927911e0934f57be940d5f9025793060ebd2fba3d85ea1c9680e94d490954898",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "wishlist",
+          "type": "float"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

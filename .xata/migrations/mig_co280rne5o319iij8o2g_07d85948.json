@@ -1,0 +1,17 @@
+{
+  "id": "mig_co280rne5o319iij8o2g",
+  "parentID": "mig_co280ckk3eooa9smiuk0",
+  "checksum": "1:07d8594836febd47592331971ad9a407b0b391a8e71703102f60f0d5960a3ce1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "specification",
+          "type": "text",
+          "defaultValue": "Processor: Intel Core i5-13420H processor (12 MB Smart Cache, 2.1 GHz Performance-core with Intel Turbo Boost Technology 2.0 up to 4.6 GHz), supporting hybrid core architecture with Performance-core and Efficientcore\nMemory: 8 GB of DDR5 system memory, upgradable to 32 GB using two soDIMM modules 2 (1) 5200Mhz DDR5\nStorage: 512GB NVMe SSD 2 (1)\nDisplay: 15.6inch display with IPS (In-Plane Switching) technology, Full HD 1920 x 1080, Acer Comfy View LED-backlit TFT LCD\n16:9 aspect ratio, supporting 144 Hz refresh rate.\nWide viewing angle up to 170 degree\nUltra-slim design\nMercury free, environment friendly\nGraphics: NVIDIA GeForce RTX 4050 with 6GB of dedicated GDDR6 VRAM\nWireless Connections\nWLAN\n11a/b/g/n/ac+ax wireless LAN\nDual Band (2.4 GHz and 5 GHz)\n2x2 MU-MIMO technology\nSupports Bluetooth 5.1 or above\nLAN\nGigabit Ethernet, Wake-on-LAN ready\nOperating System: Windows 11 Home\nDTS X Ultra Audio, featuring optimized Bass, Loudness, Speaker Protection with up to 6 custom content modes by smart amplifier\nSupported in Windows Spatial Sound for PC Gaming with DTS license integrated\nimmersive audio rendering over headphones and internal speaker\nHigh SNR DAC with 2.1 Vrms out capability and can driver high impedance headphone (up to 600 ohm) Acer Purified.Voice technology with AI noise reduction in dual built-in microphones. Features include far-field pickup, dynamic noise reduction through neural network, adaptive beam forming, and predefined personal and conference call modes.\nCompatible with Cortana with Voice\nAcer TrueHarmony technology for lower distortion, wider frequency range, headphone-like audio and powerful sound\nDimensions: 362.3 (W) x 239.89 (D) x 23.5/27 (H) mm (14.26 x 9.44 x 0.93/1.06 inches)\nWeight: 2.113 kg (4.66 lbs.) with 4-cell battery pack\n3-pin 135 W AC adapter\n57 Wh 4-cell Li-ion battery\nVideo conferencing UFC with\nT-Type HD cameraCompatible with Windows only 1280 x 720 resolution\n720p HD video at 30 fps with Temporal Noise Reduction\nBlue Glass lens\nDual Mic (33 mm + 33 mm)\n78 x 3.2 (5.2) x 3 mm\"\nThree USB Standard-A ports, supporting:\nOne port for USB 3.2 Gen 1 featuring power off USB charging\nTwo ports for USB 3.2 Gen 1\nUSB Type-C port supporting\nUSB 3.2 Gen 2 (up to 10 Gbps)\nDisplayPort over USB-C\nThunderbolt 4\nUSB charging 5 V; 3 A\nDC-in port 20 V; 65 W\nHDMI 2.1 port with HDCP support\n5 mm headphone/speaker jack, supporting headsets with built-in microphone\nEthernet (RJ-45) port\nDC-in jack for AC adapter\nKeyboard: 99-/100-/103-key Acer keyboard layout with international language support including indicators of CapsLock and F4/Microphone mute\nTouchPad\nMulti-gesture secure touchpad, supporting two-finger scroll; pinch; gestures to open Cortana, Action Center, multitasking; Fingerprint application commands\nMicrosoft Precision Touchpad certification\nMoisture resistant\nNo Deadzone\nWindows Hello Certification\nProtecting Against Fingerprint Spoofing\nMedia Keys\nMedia control keys (printed on keyboard): volume up, volume down"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

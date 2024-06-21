@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpqiduv1pnsl6dnkdaj0",
+  "parentID": "mig_cpi894pvqeg9k50r6b5g",
+  "checksum": "1:576e781879304e8dc4cc0d3c707048e290f7823763a6bce0e48220328c2998e0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "discountedprice",
+          "type": "int"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

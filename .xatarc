@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://looky26-s-workspace-2dj0cs.eu-west-1.xata.sh/db/xata-techstore",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

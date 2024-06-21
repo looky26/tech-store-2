@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpi894pvqeg9k50r6b5g",
+  "parentID": "mig_cpi8921vqeg9k50r6b4g",
+  "checksum": "1:54ea789ee753c89a511501a034311102f500c14826325c2813fb646d2eabcd99",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "birthday",
+          "type": "string"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

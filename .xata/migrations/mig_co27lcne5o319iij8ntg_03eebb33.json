@@ -1,0 +1,16 @@
+{
+  "id": "mig_co27lcne5o319iij8ntg",
+  "parentID": "mig_co27l2kk3eooa9smiu80",
+  "checksum": "1:03eebb3372c4501e2a4c06b722ecab2a54496f90453489e83e61719a0c8f5f89",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "wishlist",
+          "type": "bool"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

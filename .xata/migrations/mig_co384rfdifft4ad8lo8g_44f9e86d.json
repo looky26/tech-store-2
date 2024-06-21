@@ -1,0 +1,17 @@
+{
+  "id": "mig_co384rfdifft4ad8lo8g",
+  "parentID": "mig_co384h7difft4ad8lo7g",
+  "checksum": "1:44f9e86d75262f3cc0daf7928cf73fb3095b03325330013fe781de639fabfc4a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "slug",
+          "type": "string",
+          "unique": true
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

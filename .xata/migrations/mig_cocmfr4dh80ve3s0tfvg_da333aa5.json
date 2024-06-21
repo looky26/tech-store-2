@@ -1,0 +1,16 @@
+{
+  "id": "mig_cocmfr4dh80ve3s0tfvg",
+  "parentID": "mig_cocmfmpatd3tffebfmcg",
+  "checksum": "1:da333aa544fa129e929d673b878c7ff53f0d7e5fe5a8c35615ed9a9d24482353",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "accounts"
+      }
+    }
+  ]
+}

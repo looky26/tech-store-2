@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpi8921vqeg9k50r6b4g",
+  "parentID": "mig_cpi88v5e83m8nsnnqth0",
+  "checksum": "1:09eee6b36c929d518c00e840719ce02c94a367edb511e2585b501de8bd9bbd3e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "mobile",
+          "type": "string"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

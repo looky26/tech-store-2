@@ -1,0 +1,16 @@
+{
+  "id": "mig_cp9cd6tnk050v1gbqe8g",
+  "parentID": "mig_cp9cd3kpak5rdck6larg",
+  "checksum": "1:4f8478dcc89ec1a0e922a891e26e5c446007eb861b30b3ff7adfaf60d31dd0de",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "ratings",
+          "type": "int"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cp9cdndnk050v1gbqe9g",
+  "parentID": "mig_cp9cdi4pak5rdck6lasg",
+  "checksum": "1:b5cf38a04782e6e45e4d3489fba4950e8653683cfde0ad5c94a0d582866fbeda",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "images",
+          "type": "file[]"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cocmi0kdh80ve3s0tg3g",
+  "parentID": "mig_cocmhhsdh80ve3s0tg1g",
+  "checksum": "1:e4398b84a57ae5c85322008069024a52a18324e25886f875e2f0abb527d72937",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "birthday",
+          "type": "datetime"
+        },
+        "table": "accounts"
+      }
+    }
+  ]
+}

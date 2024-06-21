@@ -1,0 +1,16 @@
+{
+  "id": "mig_cocmhbana9qe6cnalv2g",
+  "parentID": "mig_cocmftsdh80ve3s0tg0g",
+  "checksum": "1:f5263ea487113b6e1686f3114a69e38b359f74e374932ffd0ee0a4720103a734",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "phoneNumber",
+          "type": "int"
+        },
+        "table": "accounts"
+      }
+    }
+  ]
+}

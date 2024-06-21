@@ -1,0 +1,13 @@
+{
+  "id": "mig_cocmit9atd3tffebfmf0",
+  "parentID": "mig_cocmi0kdh80ve3s0tg3g",
+  "checksum": "1:ce823904bd1bfac54257d37954258d4d578bf1d9797413a233ad7dbf9963cd77",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "birthday",
+        "table": "accounts"
+      }
+    }
+  ]
+}

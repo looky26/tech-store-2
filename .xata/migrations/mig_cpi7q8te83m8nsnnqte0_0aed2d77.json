@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpi7q8te83m8nsnnqte0",
+  "parentID": "mig_cpi7pt9vqeg9k50r6asg",
+  "checksum": "1:0aed2d773caa10c7ec1085617beaf5ab8b6e323eabe147936fcc3288470dfaa0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "stateorprovince",
+          "type": "string"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

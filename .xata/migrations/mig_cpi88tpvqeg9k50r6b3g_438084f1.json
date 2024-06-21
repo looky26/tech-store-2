@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpi88tpvqeg9k50r6b3g",
+  "parentID": "mig_cpi7qlpvqeg9k50r6b00",
+  "checksum": "1:438084f1a3041e8033aefa5fce4691bae2b976c8c789c2d0af62aa9b048fd018",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "mobile",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

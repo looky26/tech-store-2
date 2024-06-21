@@ -1,0 +1,16 @@
+{
+  "id": "mig_cp9cf0dnk050v1gbqebg",
+  "parentID": "mig_cp9cestnk050v1gbqeag",
+  "checksum": "1:be6e0dc5317d23a054010e75cb52e5ae103eea8e09273fc78223f74f87b3ee2f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "specification",
+          "type": "text"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}

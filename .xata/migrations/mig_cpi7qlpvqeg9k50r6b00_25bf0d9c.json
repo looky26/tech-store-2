@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpi7qlpvqeg9k50r6b00",
+  "parentID": "mig_cpi7qhde83m8nsnnqtf0",
+  "checksum": "1:25bf0d9c039bf38e4ccf64454806ea12fbecad419518ae40df4bcf2bf96c6cb9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "country",
+          "type": "string"
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

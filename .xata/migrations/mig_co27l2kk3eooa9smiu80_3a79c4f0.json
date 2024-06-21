@@ -1,0 +1,16 @@
+{
+  "id": "mig_co27l2kk3eooa9smiu80",
+  "parentID": "mig_co27ktck3eooa9smiu70",
+  "checksum": "1:3a79c4f0da874bc017dab310d269448e86e191e8f7b77a25c0ce7903f8e81f97",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "quantity",
+          "type": "int"
+        },
+        "table": "products"
+      }
+    }
+  ]
+}
