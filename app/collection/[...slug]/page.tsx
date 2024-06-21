@@ -206,7 +206,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
         )}
 
         {/* right */}
-        {params.slug[0] === "sulit-deals" ? (
+        {params.slug[0] === "sulit-deals"  && !params.slug[1] ? (
           // Show products for sulit-deals
           <div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
