@@ -11,6 +11,11 @@ const Navbar = () => {
   const clearCart = useCartStore((state: any) => state.clearCart);
   const router = useRouter();
   const session = useSession();
+
+  // const isDevMode = process.env.NODE_ENV === "development";
+
+  
+
   //console.log(session);
 
   const [menuOpen, setMenuOpen] = useState(false);

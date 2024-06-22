@@ -13,9 +13,13 @@ const Accounts = async () => {
 
   const records = await xata.db.nextauth_users_sessions
     .select(["user.name", "user.email", "user.image", 'user.mobile'])
+    .filter("user.id", session?.user?.id)
     .getAll();
 
-  //console.log(records);
+  
+    //console.log(records);
+
+    console.log('session', session?.user?.id)
 
   const serializedRecords = records.toSerializable();
 
