@@ -9,6 +9,8 @@ const xata = getXataClient();
 const Accounts = async () => {
   const session = await auth();
 
+  //console.log(session)
+
   const xata = getXataClient();
 
   const records = await xata.db.nextauth_users_sessions
@@ -19,7 +21,7 @@ const Accounts = async () => {
   
     //console.log(records);
 
-    console.log('session', session?.user?.id)
+    //console.log('session', session?.user?.id)
 
   const serializedRecords = records.toSerializable();
 

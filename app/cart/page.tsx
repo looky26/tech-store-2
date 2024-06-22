@@ -27,7 +27,7 @@ const Cart = () => {
     0
   );
 
-  console.log(cart);
+  //console.log(cart);
 
   return (
     <div className="max-w-7xl mx-auto px-5">

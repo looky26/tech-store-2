@@ -21,9 +21,9 @@ const EditClientSide = ({ updateAccount, records }: any) => {
     setValue(newValue);
   };
 
-  console.log(gender);
+  //console.log(gender);
 
-  console.log(records);
+  //console.log(records);
 
   return (
     <div>

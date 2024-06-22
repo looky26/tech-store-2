@@ -3,7 +3,7 @@ import React from "react";
 const Desktop = () => {
   return (
     <div className="max-w-[1800px] mx-auto mt-10 bg-gray-500">
-      <div className="grid grid-cols-2 gap-x-10 p-10">
+      <div className="grid grid-cols-1 gap-y-5 lg:grid-cols-2 gap-x-10 p-10">
         <div className="p-10 bg-teal-900 rounded-xl">
           <div className="flex justify-between">
             <h1>DESKTOPS</h1>

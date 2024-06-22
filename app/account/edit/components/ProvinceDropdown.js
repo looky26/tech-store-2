@@ -164,7 +164,7 @@ const provincesAndCities = {
 
 const ProvinceCityDropdown = ({records}) => {
 
-  console.log(records[0].user.stateorprovince)
+  //console.log(records[0].user.stateorprovince)
   const [selectedProvince, setSelectedProvince] = useState(records[0].user.stateorprovince);
   const [cities, setCities] = useState([records[0].user.city]);
   const [country, setCountry] = useState(records[0].user.country);

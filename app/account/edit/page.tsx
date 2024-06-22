@@ -11,10 +11,17 @@ const xata = getXataClient();
 
 const EditAccount = async () => {
   const session = await auth()
-  const loggedInId = await xata.db.nextauth_users_sessions.getAll();
+//console.log('editaccountsession', session)
+
+  const loggedInId = await xata.db.nextauth_users_sessions
+  .filter("user.id", session?.user?.id)
+  .getAll();
+
+  //console.log(loggedInId)
 
   // Check if loggedInId array is not empty and user id is defined
   const loggedInUser = loggedInId.length > 0 ? loggedInId[0].user?.id : undefined;
+  console.log('logged in user', loggedInUser)
   
   const updateAccount = async (formData: FormData) => {
     "use server";
@@ -29,7 +36,7 @@ const EditAccount = async () => {
     const completeAddress = address + " " + city
     const country = formData.get('country')
    
-    console.log(name, email, mobile, date, completeAddress);
+    //console.log(name, email, mobile, date, completeAddress);
   
     // Check if loggedInUser is defined before updating
     if (loggedInUser) {
@@ -53,6 +60,7 @@ const EditAccount = async () => {
 
   const records = await xata.db.nextauth_users_sessions
     .select(["user.name", "user.email", "user.image", 'user.gender', 'user.mobile', 'user.birthday', 'user.city', 'user.address1', 'user.country', 'user.stateorprovince'])
+    .filter("user.id", session?.user?.id)
     .getAll();
 
   //console.log(records[0]?.user?.name);

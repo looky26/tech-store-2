@@ -94,7 +94,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
 
   //console.log('laptop', allRecords);
 
-  console.log(params.slug);
+  //console.log(params.slug);
 
   const truncateText = (text: any, maxLength: any) => {
     if (text.length > maxLength) {
