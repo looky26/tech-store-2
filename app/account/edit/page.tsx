@@ -4,6 +4,7 @@ import EditClientSide from "./components/EditClientSide";
 import { getXataClient } from "@/src/xata";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 const xata = getXataClient();
 
@@ -23,34 +24,37 @@ const EditAccount = async () => {
   const loggedInUser = loggedInId.length > 0 ? loggedInId[0].user?.id : undefined;
   console.log('logged in user', loggedInUser)
   
-  const updateAccount = async (formData: FormData) => {
+  const updateAccount = async (formData:any) => {
     "use server";
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const mobile = formData.get("mobile");
-    const date = formData.get("date");
-    const gender = formData.get("gender");
-    const address = formData.get("address");
-    const province = formData.get("province");
-    const city = formData.get("city");
-    const completeAddress = address + " " + city
-    const country = formData.get('country')
+    // const name = formData.get("name");
+    // const email = formData.get("email");
+    // const mobile = formData.get("mobile");
+    // const date = formData.get("date");
+    // const gender = formData.get("gender");
+    // const address = formData.get("address");
+    // const province = formData.get("province");
+    // const city = formData.get("city");
+    // const completeAddress = address + " " + city
+    // const country = formData.get('country')
+
+    //console.log('formdata',formData.email)
    
     //console.log(name, email, mobile, date, completeAddress);
   
-    // Check if loggedInUser is defined before updating
+    //Check if loggedInUser is defined before updating
     if (loggedInUser) {
       await xata.db.nextauth_users.update([{
         id: loggedInUser,
-        mobile: mobile as string,
-        birthday: date as string,
-        gender: gender as string,
-        address1: address as string,
-        stateorprovince: province as string,
-        city: city as string,
-        country: country as string
+        mobile: formData.mobile,
+        birthday: formData.date,
+        gender: formData.gender,
+        address1: formData.address,
+        stateorprovince: formData.province,
+        city: formData.city,
+        country: formData.country
         
       }]);
+      revalidatePath('/account')
     } else {
       console.error("loggedInUser is undefined, cannot update the user.");
     }

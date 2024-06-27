@@ -1,0 +1,13 @@
+{
+  "id": "mig_cprs1qvd9rvd1vn3m4d0",
+  "parentID": "mig_cprrud7d9rvd1vn3m4c0",
+  "checksum": "1:72dccdb46dd555c657e5242919d8aafd3b144efbb57ea0c0007b5d28b05b226c",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "orders",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

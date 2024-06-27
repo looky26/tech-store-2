@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/account/edit/page.tsx", "app/account/edit/components/ProvinceDropdown.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/account/edit/page.tsx", "app/account/edit/components/ProvinceDropdown.js", "app/api/webhook/route.ts"],
   "exclude": ["node_modules"]
 }

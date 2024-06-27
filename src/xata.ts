@@ -110,6 +110,14 @@ const tables = [
     columns: [{ name: "name", type: "string" }],
     revLinks: [{ column: "brand", table: "products" }],
   },
+  {
+    name: "orders",
+    columns: [
+      { name: "orders", type: "json" },
+      { name: "email", type: "string" },
+      { name: "datepurchase", type: "datetime" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -144,6 +152,9 @@ export type CategoriesRecord = Categories & XataRecord;
 export type Brands = InferredTypes["brands"];
 export type BrandsRecord = Brands & XataRecord;
 
+export type Orders = InferredTypes["orders"];
+export type OrdersRecord = Orders & XataRecord;
+
 export type DatabaseSchema = {
   nextauth_accounts: NextauthAccountsRecord;
   nextauth_users: NextauthUsersRecord;
@@ -154,6 +165,7 @@ export type DatabaseSchema = {
   products: ProductsRecord;
   categories: CategoriesRecord;
   brands: BrandsRecord;
+  orders: OrdersRecord;
 };
 
 const DatabaseClient = buildClient();

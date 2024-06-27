@@ -1,11 +1,34 @@
 "use client";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const CategoriesClientSide = ({ cat }: any) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
-  const scrollLeft = () => {
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (containerRef.current) {
+      setIsDragging(true);
+      setStartX(e.pageX - containerRef.current.offsetLeft);
+      setScrollLeft(containerRef.current.scrollLeft);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Multiply by 2 for faster scrolling
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const scrollLeftButton = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({
         left: -300,
@@ -14,7 +37,7 @@ const CategoriesClientSide = ({ cat }: any) => {
     }
   };
 
-  const scrollRight = () => {
+  const scrollRightButton = () => {
     if (containerRef.current) {
       containerRef.current.scrollBy({
         left: 300,
@@ -24,10 +47,13 @@ const CategoriesClientSide = ({ cat }: any) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto flex space-x-5 overflow-hidden relative">
+    <div
+      className="max-w-7xl mx-auto flex space-x-5 overflow-x-auto relative"
+      style={{ userSelect: "none" }}
+    >
       <button
         className="relative flex items-center justify-center"
-        onClick={scrollLeft}
+        onClick={scrollLeftButton}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,15 +78,24 @@ const CategoriesClientSide = ({ cat }: any) => {
           msOverflowStyle: "none",
           scrollSnapType: "x mandatory",
         }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp} // Ensure dragging stops if the mouse leaves the container
       >
         {cat.map((item: any) => (
           <Link
             className="bg-orange-300 border border-orange-300 rounded-md"
             key={item.id}
-            style={{ scrollSnapAlign: "end" }}
+            style={{ scrollSnapAlign: "center" }}
             href={`/collection/${item.name}`}
+            draggable="false"
           >
-            <p className="text-sm w-[200px] text-center text-black">
+            <p
+              className="text-sm w-[200px] text-center text-black"
+              draggable="false"
+              style={{ userSelect: "none" }}
+            >
               {item.name?.toUpperCase()}
             </p>
             {item && item.image && item.image[0] && item.image[0].url && (
@@ -68,12 +103,13 @@ const CategoriesClientSide = ({ cat }: any) => {
                 className="h-52 object-cover rounded-md"
                 src={item.image[0].url}
                 alt=""
+                draggable="false"
               />
             )}
           </Link>
         ))}
       </div>
-      <button onClick={scrollRight}>
+      <button onClick={scrollRightButton}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

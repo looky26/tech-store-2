@@ -1,0 +1,16 @@
+{
+  "id": "mig_cprt2ovd9rvd1vn3m4t0",
+  "parentID": "mig_cprs5mfd9rvd1vn3m4ig",
+  "checksum": "1:ee0dd7c26b4dd372758132b37d1c54540ddad66578bb653291318e7f7748b446",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name2",
+          "type": "multiple"
+        },
+        "table": "orders"
+      }
+    }
+  ]
+}

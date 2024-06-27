@@ -1,0 +1,14 @@
+{
+  "id": "mig_cpt8sfk4rrmjhn9j46kg",
+  "parentID": "mig_cpt8sbbdtgjqg3b686v0",
+  "checksum": "1:8665e8af48327eed68e44a59fef6dd880a343f61da85b6e0b1f709c7d6bf09c7",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "orders",
+        "oldName": "json",
+        "table": "orders"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mig_cpt8sbbdtgjqg3b686v0",
+  "parentID": "mig_cpt8rpbdtgjqg3b686u0",
+  "checksum": "1:a5fbaeaee93a232c86ad1771ddd0902db7d4e6678a71839dcaff3ee2b0c7f539",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "orders",
+        "table": "orders"
+      }
+    }
+  ]
+}

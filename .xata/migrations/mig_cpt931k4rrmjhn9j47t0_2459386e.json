@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpt931k4rrmjhn9j47t0",
+  "parentID": "mig_cpt8sfk4rrmjhn9j46kg",
+  "checksum": "1:2459386e71e8cfe58dbe1a4de233e9fca03e2726b9e73eb63f2f3aa420cd28ff",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "email",
+          "type": "string"
+        },
+        "table": "orders"
+      }
+    }
+  ]
+}

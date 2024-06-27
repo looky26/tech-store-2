@@ -8,40 +8,40 @@ const xata = getXataClient();
 
 const CollectionPage = async ({ params }: { params: { slug: string } }) => {
   const allProducts = await xata.db.products
-  .select([
-    "name",
-    "ratings",
-    "images",
-    "available",
-    "quantity",
-    "wishlist",
-    "productdescription",
-    "specification",
-    "price",
-    "slug",
-    'discountedprice',
-    "brand", // Explicitly select the brand name
-    "category",
-  ])
-  .getPaginated();
+    .select([
+      "name",
+      "ratings",
+      "images",
+      "available",
+      "quantity",
+      "wishlist",
+      "productdescription",
+      "specification",
+      "price",
+      "slug",
+      "discountedprice",
+      "brand", // Explicitly select the brand name
+      "category",
+    ])
+    .getPaginated();
 
   const allRecords = await xata.db.products
-  .select([
-    "name",
-    "ratings",
-    "images",
-    "available",
-    "quantity",
-    "wishlist",
-    "productdescription",
-    "specification",
-    "price",
-    "slug",
-    'discountedprice',
-    "brand", // Explicitly select the brand name
-    "category",
-  ])
-  .filter("category.name", params.slug)
+    .select([
+      "name",
+      "ratings",
+      "images",
+      "available",
+      "quantity",
+      "wishlist",
+      "productdescription",
+      "specification",
+      "price",
+      "slug",
+      "discountedprice",
+      "brand", // Explicitly select the brand name
+      "category",
+    ])
+    .filter("category.name", params.slug)
     .getMany();
 
   const singleRecord = await xata.db.products
@@ -57,7 +57,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
       "price",
       "slug",
       "brand",
-      'discountedprice',
+      "discountedprice",
       "category",
     ])
     .filter({ slug: params.slug[1] })
@@ -76,7 +76,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
       "specification",
       "price",
       "slug",
-      'brand',
+      "brand",
       "discountedprice",
     ])
     .getPaginated({
@@ -84,8 +84,6 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
         size: 15,
       },
     });
-
-
 
   const serializedSingleRecords = singleRecord?.toSerializable();
 
@@ -183,7 +181,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
                   />
                 </svg>
                 <p className="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
-               {decodeURIComponent(singleRecord?.name ?? '').toUpperCase()}
+                  {decodeURIComponent(singleRecord?.name ?? "").toUpperCase()}
                 </p>
               </div>
             </li>
@@ -206,14 +204,14 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
         )}
 
         {/* right */}
-        {params.slug[0] === "sulit-deals"  && !params.slug[1] ? (
+        {params.slug[0] === "sulit-deals" && !params.slug[1] ? (
           // Show products for sulit-deals
           <div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
               {sulitDealsRecords.records.map((item: any) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2"
+                  className="space-y-2 relative"
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
@@ -223,7 +221,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
                       className="w-[360px] :h-[354px] md:w-full"
                     />
                   ) : null}
-                  <p className="text-wrap">{truncateText(item.name, 50)}</p>
+                  <p className="text-wrap">{truncateText(item.name, 45)}</p>
                   <p>{item.brand.name}</p>
                   <p className="text-yellow-500">
                     {createStars(item.ratings)}{" "}
@@ -231,7 +229,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
                   </p>
                   <p>&#x20B1; {item.discountedprice}</p>
                   <div className="flex justify-center">
-                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg">
+                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg absolute bottom-0">
                       BUY NOW
                     </button>
                   </div>
@@ -246,7 +244,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
               {allProducts.records.map((item) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2"
+                  className="space-y-2 relative"
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
@@ -256,15 +254,20 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
                       className="w-[360px] :h-[354px] md:w-full"
                     />
                   ) : null}
-                  <p className="text-wrap">{truncateText(item.name, 50)}</p>
-              {item.brand?.name}
+                  <p className="text-wrap">{truncateText(item.name, 45)}</p>
+                  {item.brand?.name}
                   <p className="text-yellow-500">
                     {createStars(item.ratings)}{" "}
                     {item.ratings === 0 ? "No reviews" : ""}
                   </p>
-                  <p>&#x20B1; {item.discountedprice === null ? item.price : item.discountedprice}</p>
+                  <p>
+                    &#x20B1;{" "}
+                    {item.discountedprice === null
+                      ? item.price
+                      : item.discountedprice}
+                  </p>
                   <div className="flex justify-center">
-                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg">
+                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg absolute bottom-0">
                       BUY NOW
                     </button>
                   </div>
@@ -275,25 +278,29 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
         ) : (
           // Show products based on slug
           <div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 ">
               {allRecords.map((item) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2"
+                  className="space-y-2 relative"
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
-                    <img src={item.images[0].url} alt="" />
+                    <img
+                      src={item.images[0].url}
+                      alt=""
+                      className="w-[360px] :h-[354px] md:w-full"
+                    />
                   ) : null}
-                  <p>{truncateText(item.name, 50)}</p>
-                <p>{item.brand?.name}</p>
+                  <p>{truncateText(item.name, 45)}</p>
+                  <p>{item.brand?.name}</p>
                   <p className="text-yellow-500">
                     {createStars(item.ratings)}{" "}
                     {item.ratings === 0 ? "No reviews" : ""}
                   </p>
                   <p>&#x20B1; {item.price}</p>
                   <div className="flex justify-center">
-                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg">
+                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg absolute bottom-0">
                       BUY NOW
                     </button>
                   </div>

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cprrud7d9rvd1vn3m4c0",
+  "parentID": "mig_cprrqc7d9rvd1vn3m4a0",
+  "checksum": "1:3a1ffbce21fcebcd667f08d26c084840b6fdd6f7ae7bb4628c2a0480af7d5ba4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "orders",
+          "type": "link",
+          "link": {
+            "table": "orders"
+          }
+        },
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

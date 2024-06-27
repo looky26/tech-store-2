@@ -1,12 +1,21 @@
 "use client";
 import { useCartStore } from "@/store/cart";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string)
+
+
 const Cart = () => {
+  const session = useSession()
   const cart = useCartStore((state: any) => state.cart);
   const addToCart = useCartStore((state: any) => state.addToCart);
   const clearCart = useCartStore((state: any) => state.clearCart);
+
+  console.log(session.data?.user?.email)
 
   function createStars(rating: number, maxRating = 5) {
     // Calculate the number of filled stars
@@ -28,6 +37,26 @@ const Cart = () => {
   );
 
   //console.log(cart);
+
+
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    //call the back end to create a checkoutsession
+    const checkoutSession = await axios.post('/api/create-checkout-session' , {
+      cart,
+      email: session.data?.user?.email
+    })
+
+    //redirect user to stripe checkout
+    const result = await stripe?.redirectToCheckout({
+      sessionId: checkoutSession.data.id
+    })
+
+    if(result?.error){
+      alert(result?.error.message)
+    }
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-5">
@@ -135,7 +164,7 @@ const Cart = () => {
                 )
                 .toFixed(2)}
             </p>
-            <button className="bg-orange-300 w-full rounded-full text-gray-800 mb-2">
+            <button onClick={createCheckoutSession} className="bg-orange-300 w-full rounded-full text-gray-800 mb-2">
               Proceed to checkout
             </button>
             <button
