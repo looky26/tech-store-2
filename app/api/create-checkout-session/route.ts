@@ -1,11 +1,18 @@
 // app/api/create-checkout-session/route.ts
 import { NextResponse } from "next/server";
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY as string);
 
 export async function POST(request: Request) {
+
+ 
+
   try {
     const { cart, email } = await request.json();
+    const successUrlDev = process.env.SUCCESS_URL_DEV;
+    const successUrlProd = process.env.SUCCESS_URL_PROD;
+    const isDevMode = process.env.NODE_ENV === "development";
+    const successUrl = isDevMode ? successUrlDev : successUrlProd;
     const itemNames = await Promise.all(cart.map((item:any) => item.name));
     const itemImages = await Promise.all(cart.map((item:any) => item.image));
     const itemPrices = await Promise.all(cart.map((item: any) => item.price));
