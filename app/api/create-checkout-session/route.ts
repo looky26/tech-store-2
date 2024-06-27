@@ -19,6 +19,8 @@ export async function POST(request: Request) {
 
     //console.log(itemNames)
     //console.log(itemImages)
+    console.log(isDevMode)
+    console.log(successUrl)
 
     const transformedItems = cart.map((item: any) => ({
       description: item.name,
@@ -33,6 +35,9 @@ export async function POST(request: Request) {
       },
     }));
 
+    const url = new URL(request.url);
+    const origin = `${url.protocol}//${url.host}`;
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: transformedItems.map((item:any) => ({
@@ -40,8 +45,10 @@ export async function POST(request: Request) {
         quantity: item.quantity,
       })),
       mode: "payment",
-      success_url: 'http://localhost:3000/success',
-      cancel_url: 'http://localhost:3000/cart',
+      success_url: successUrl,
+      // success_url: 'http://localhost:3000/success',
+      cancel_url: `${origin}/?canceled=true`,
+      // cancel_url: 'http://localhost:3000/cart',
       metadata: {
         email,
         itemNames: itemNames.join(','),

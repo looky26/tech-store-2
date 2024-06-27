@@ -211,7 +211,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
               {sulitDealsRecords.records.map((item: any) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2 relative"
+                  className="space-y-2"
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
@@ -229,7 +229,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
                   </p>
                   <p>&#x20B1; {item.discountedprice}</p>
                   <div className="flex justify-center">
-                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg absolute bottom-0">
+                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg ">
                       BUY NOW
                     </button>
                   </div>
@@ -244,7 +244,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
               {allProducts.records.map((item) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2 relative"
+                  className="space-y-2 "
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
@@ -267,7 +267,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
                       : item.discountedprice}
                   </p>
                   <div className="flex justify-center">
-                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg absolute bottom-0">
+                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg ">
                       BUY NOW
                     </button>
                   </div>
@@ -282,7 +282,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
               {allRecords.map((item) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2 relative"
+                  className="space-y-2 "
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
@@ -300,7 +300,7 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
                   </p>
                   <p>&#x20B1; {item.price}</p>
                   <div className="flex justify-center">
-                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg absolute bottom-0">
+                    <button className="bg-orange-300 text-black border border-white w-full rounded-lg ">
                       BUY NOW
                     </button>
                   </div>
