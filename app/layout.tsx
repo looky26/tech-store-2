@@ -23,6 +23,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </SessionProvider>
+        
       </body>
     </html>
   );

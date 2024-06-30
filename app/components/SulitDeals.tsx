@@ -38,7 +38,7 @@ const SulitDeals = async () => {
         <Link href={"/collection/sulit-deals"}>SEE MORE</Link>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-5">
         <SulitDealsClientSide discountedProducts={serializedRecords}/>
       </div>
     </div>

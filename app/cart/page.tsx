@@ -4,6 +4,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string)
@@ -14,6 +15,7 @@ const Cart = () => {
   const cart = useCartStore((state: any) => state.cart);
   const addToCart = useCartStore((state: any) => state.addToCart);
   const clearCart = useCartStore((state: any) => state.clearCart);
+  const router = useRouter()
 
   console.log(session.data?.user?.email)
 
@@ -40,7 +42,16 @@ const Cart = () => {
 
 
   const createCheckoutSession = async () => {
+
+    if (!session || !session.data || !session.data.user || !session.data.user.email) {
+      alert("You need to be logged in to proceed to checkout.");
+      // Optionally, redirect to login page
+      // window.location.href = "/login";
+      router.push('/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fcart')
+      return;
+    }
     const stripe = await stripePromise;
+    
 
     //call the back end to create a checkoutsession
     const checkoutSession = await axios.post('/api/create-checkout-session' , {

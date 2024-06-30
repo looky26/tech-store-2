@@ -211,17 +211,17 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
               {sulitDealsRecords.records.map((item: any) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2"
+                  className="space-y-2 text-sm"
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
                     <img
                       src={item.images[0].url}
                       alt=""
-                      className="w-[360px] :h-[354px] md:w-full"
+                      className="w-[360px] h-fit md:w-full"
                     />
                   ) : null}
-                  <p className="text-wrap">{truncateText(item.name, 45)}</p>
+                  <p className=" text-justify truncate">{item.name}</p>
                   <p>{item.brand.name}</p>
                   <p className="text-yellow-500">
                     {createStars(item.ratings)}{" "}
@@ -244,17 +244,17 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
               {allProducts.records.map((item) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2 "
+                  className="space-y-2 text-sm "
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
                     <img
                       src={item.images[0].url}
                       alt=""
-                      className="w-[360px] :h-[354px] md:w-full"
+                      className="w-[360px] h-fit md:w-full"
                     />
                   ) : null}
-                  <p className="text-wrap">{truncateText(item.name, 45)}</p>
+                  <p className=" text-justify truncate">{item.name}</p>
                   {item.brand?.name}
                   <p className="text-yellow-500">
                     {createStars(item.ratings)}{" "}
@@ -282,17 +282,17 @@ const CollectionPage = async ({ params }: { params: { slug: string } }) => {
               {allRecords.map((item) => (
                 <Link
                   href={`/collection/${params.slug}/${item.slug}`}
-                  className="space-y-2 "
+                  className="space-y-2 text-sm"
                   key={item.slug}
                 >
                   {item.images && item.images[0] && item.images[0].url ? (
                     <img
                       src={item.images[0].url}
                       alt=""
-                      className="w-[360px] :h-[354px] md:w-full"
+                      className="w-[360px] h-fit md:w-full"
                     />
                   ) : null}
-                  <p>{truncateText(item.name, 45)}</p>
+                  <p className=" text-justify truncate">{item.name}</p>
                   <p>{item.brand?.name}</p>
                   <p className="text-yellow-500">
                     {createStars(item.ratings)}{" "}

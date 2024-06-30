@@ -11,10 +11,7 @@ const Category = async () => {
   //console.log(serializedRecords)
 
   return (
-    <div
-      className="max-w-7xl mx-auto flex space-x-5 overflow-x-auto mt-5"
-      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-    >
+    <div>
       <CategoriesClientSide cat={serializedRecords} />
     </div>
   );
